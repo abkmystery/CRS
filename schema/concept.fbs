@@ -1,0 +1,46 @@
+// Flatbuffers Schema for CRS Concept
+// License: Apache 2.0
+
+namespace crs;
+
+table Embedding {
+  vector: [float];
+}
+
+table Relation {
+  type: string;
+  target_id: string;
+  source: string;
+  confidence: float;
+}
+
+table Evidence {
+  source_type: string;
+  snippet: string;
+  url: string;
+  confidence: float;
+}
+
+table Property {
+  key: string;
+  value: string;
+}
+
+table Concept {
+  id: string;
+  label: string;
+  aliases: [string];
+  types: [string];
+  definition: string;
+
+  text_embedding: Embedding;
+  image_embedding: Embedding;
+  audio_embedding: Embedding;
+  video_embedding: Embedding;
+
+  relations: [Relation];
+  evidence: [Evidence];
+  properties: [Property];
+}
+
+root_type Concept;

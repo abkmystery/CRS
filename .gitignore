@@ -1,0 +1,21 @@
+# Ignore Data Storage (The Brain)
+data/
+data.mdb
+lock.mdb
+
+# Ignore Python Cache
+__pycache__/
+*.pyc
+
+# Ignore Virtual Env (if you use one)
+venv/
+env/
+
+# Ignore IDE settings
+.idea/
+.vscode/
+
+# Ignore huge AI models (cached)
+*.bin
+*.pth
+*.safetensors
